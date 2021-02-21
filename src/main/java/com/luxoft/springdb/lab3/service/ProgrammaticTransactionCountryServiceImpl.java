@@ -46,7 +46,7 @@ public class ProgrammaticTransactionCountryServiceImpl implements ProgrammaticTr
     }
 
     private Country getCountryByCodeNameInTransaction(final String codeName, final Propagation propagation) {
-
+        transactionTemplate.setPropagationBehavior(propagation.value());
         return (Country) transactionTemplate.execute(new TransactionCallback<Object>() {
             public Object doInTransaction(TransactionStatus status) {
                 TransactionLog.append("Method inside transaction, propagation = " + propagation.toString() + "\n");
