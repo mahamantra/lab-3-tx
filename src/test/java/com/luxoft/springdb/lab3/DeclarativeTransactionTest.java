@@ -1,4 +1,5 @@
 package com.luxoft.springdb.lab3;
+
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -16,9 +17,9 @@ import com.luxoft.springdb.lab3.service.CountryService;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:application-context.xml")
 public class DeclarativeTransactionTest extends JdbcTest {
-    
-	@Autowired
-	private CountryService countryService;
+
+    @Autowired
+    private CountryService countryService;
 
     @Before
     public void setUp() throws Exception {
